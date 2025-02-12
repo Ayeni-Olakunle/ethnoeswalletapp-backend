@@ -25,6 +25,8 @@ SECRET_KEY = 'django-insecure-$wa+_08b)vifgc+0a9$5$cml)i5gbj)bjp@m%y29czy(v36(o!
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -38,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders'
     "rest_framework",
     'myapp',
+    'corsheaders',
 ]
 
 
@@ -52,7 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 REST_FRAMEWORK = {
@@ -60,8 +61,6 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',  # Disable Browsable API
     ),
 }
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'ethnoeswalletapp.urls'
 
