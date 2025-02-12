@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders'
     "rest_framework",
     'myapp',
 ]
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 REST_FRAMEWORK = {
@@ -58,6 +60,8 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',  # Disable Browsable API
     ),
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'ethnoeswalletapp.urls'
 
