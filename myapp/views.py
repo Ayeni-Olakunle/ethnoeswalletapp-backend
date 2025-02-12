@@ -20,21 +20,10 @@ def get_financial_data(request):
     ]
     return Response(data)
 
-
-@api_view(['GET'])
-def get_savings_plans(request):
-    savings_plans = [
-        {"name": "New Car", "amount": 20000},
-        {"name": "New House", "amount": 32000},
-        {"name": "Vacation", "amount": 45000},
-    ]
-    return Response(savings_plans)
-
-
 @api_view(['GET'])
 def get_balance(request):
-    get_balance_amount = {"name": "balance", "amount": 8899750}
-    return Response(get_balance_amount)
+    data = {"name": "balance", "amount": 5000}
+    return Response(data)
 
 
 @api_view(['GET'])
@@ -60,3 +49,13 @@ def recent_activities_data(request):
         },
     ]
     return Response(data)
+
+
+@api_view(['GET'])
+def get_savings_plans(request):
+    savings_plans = [
+        {"name": "New Car", "amount": 20000},
+        {"name": "New House", "amount": 32000},
+        {"name": "Vacation", "amount": 45000},
+    ]
+    return Response(savings_plans)

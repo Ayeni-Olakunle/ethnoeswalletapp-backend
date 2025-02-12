@@ -25,18 +25,8 @@ from django.urls import path
 from myapp.views import get_balance, get_financial_data, get_savings_plans, recent_activities_data
 
 urlpatterns = [
-    path('financial-data/', get_financial_data, name='financial_data'),
-]
-
-
-urlpatterns = [
-    path('savings-plans/', get_savings_plans, name='savings-plans'),
-]
-
-urlpatterns = [
-    path('get_balance/', get_balance, name='get-balance'),
-]
-
-urlpatterns = [
     path('recent_activities_data/', recent_activities_data, name='recent-activities-data'),
+    path('get_balance/', get_balance, name='get-balance'),
+    path('savings-plans/', get_savings_plans, name='savings-plans'),
+    path('financial-data/', get_financial_data, name='financial_data'),
 ]
